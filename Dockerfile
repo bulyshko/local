@@ -28,6 +28,6 @@ LABEL maintainer="Romuald Bulyshko <opensource@bulyshko.com>"
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /usr/bin/app /usr/local/bin/app
 
-EXPOSE 54321/udp
+EXPOSE 12345/udp
 
 ENTRYPOINT ["app"]

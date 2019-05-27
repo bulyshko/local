@@ -24,7 +24,7 @@ func main() {
 	url := "wss://dialogs.herokuapp.com"
 	log.Printf("connecting to %s", url)
 
-	addr, err := net.ResolveUDPAddr("udp", "239.228.217.206:54321")
+	addr, err := net.ResolveUDPAddr("udp", "239.228.217.206:12345")
 	if err != nil {
 		log.Fatalf("udp error: %v", err)
 		return
