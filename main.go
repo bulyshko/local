@@ -21,7 +21,7 @@ func main() {
 	interrupt := make(chan os.Signal, 1)
 	signal.Notify(interrupt, os.Interrupt)
 
-	url := "wss://dialogs.herokuapp.com"
+	url := os.Getenv("WSS_URL")
 	log.Printf("connecting to %s", url)
 
 	addr, err := net.ResolveUDPAddr("udp", "239.228.217.206:12345")
