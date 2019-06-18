@@ -1,6 +1,6 @@
 FROM golang:alpine AS builder
 
-RUN apk add --update --no-cache git ca-certificates upx && update-ca-certificates 2>/dev/null
+RUN apk add --update --no-cache git ca-certificates && update-ca-certificates 2>/dev/null
 
 RUN mkdir /app
 WORKDIR /app
@@ -19,8 +19,7 @@ RUN set -ex && \
     go build \
         -a -installsuffix cgo \
         -ldflags="-w -s" \
-        -o /usr/bin/app && \
-    upx --best -q /usr/bin/app
+        -o /usr/bin/app
 
 FROM scratch
 
